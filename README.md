@@ -1,63 +1,42 @@
-# 🥇 Winner of INT20H Hackathon – MainBackend
+# 🚀 AI Code Generator - Server Side
 
-This project **won 1st place** at the **INT20H Hackathon** 🏆  
-It showcases the integration of AI (ChatGPT) with GitHub to fully automate project scaffolding, repository creation, and architecture generation.
+Цей репозиторій містить вихідний код серверної частини (Backend) системи автоматизованої генерації програмного коду. Сервіс виступає центральним оркстратором, що забезпечує взаємодію між клієнтським інтерфейсом, базою даних та LLM-провайдером (OpenAI API).
 
----
+Архітектура побудована на базі **Java** та екосистеми **Spring Boot**, з акцентом на безпеку, масштабованість та чітке розділення відповідальності.
 
-# MainBackend
+## 🛠 Технологічний стек
 
-**MainBackend** is the backend service that powers an AI-driven assistant (based on ChatGPT) capable of fully managing and generating GitHub repositories. It allows seamless integration with your GitHub account and enables the AI to:
+Проєкт реалізовано з використанням сучасних інструментів Enterprise-розробки:
 
-- Analyze and manage your existing repositories
-- Automatically create new repositories with complete project architecture
-- Generate full file and directory structures for real-world applications
+* **Core:** Java 17+, Spring Boot 3.x
+* **Database:** PostgreSQL (AWS RDS в продакшн-середовищі)
+* **Security:** Spring Security, OAuth2 (GitHub Integration), JWT
+* **AI Integration:** OpenAI API (GPT-4 / GPT-3.5 Turbo)
+* **DevOps:** Docker, Docker Compose, AWS EC2
+* **Utilities:** Lombok, MapStruct, Maven
 
----
+## 🌟 Ключовий функціонал
 
-## 🚀 Features
+* **RESTful API:** Чітко структуровані ендпоінти для взаємодії з фронтендом.
+* **Автентифікація:** Делегована авторизація через GitHub (OAuth2) та управління сесіями за допомогою Stateless JWT.
+* **Генерація проєктів:** Обробка промтів, взаємодія з AI-моделями та формування файлової структури проєкту.
+* **Управління репозиторіями:** CRUD-операції для збереження та редагування згенерованих проєктів.
+* **Безпека:** Налаштовані CORS політики, захист від CSRF атак, валідація вхідних даних.
 
-- 🔗 **GitHub Integration** – Authenticate and link your GitHub account
-- 🤖 **AI Assistant (ChatGPT)** – Conversational assistant that helps with project setup, ideas, and coding
-- 🏗️ **Auto Project Generation** – Generate a complete GitHub repository with full structure and content
-- 📂 **Architecture Generator** – Create projects with best-practice layered architecture and file hierarchy
+## ⚙️ Попередні вимоги
 
----
+Для локального запуску вам знадобляться:
 
-## 📦 Tech Stack
+* JDK 17 або вище
+* Docker та Docker Compose
+* Maven
+* Активний акаунт OpenAI (API Key)
+* GitHub OAuth App credentials (Client ID & Secret)
 
-- **Java** / **Spring Boot** – Backend framework
-- **Gradle** – Build system
-- **GitHub REST API** – Repository management
-- **OpenAI API** – AI assistant (ChatGPT)
-- **PostgreSQL** – Database
-- **JWT Authentication** – Secure access
-- **Docker** – Containerized deployment
+## 🚀 Інструкція із запуску (Local)
 
----
-
-## 🔧 Getting Started
-
-### Prerequisites
-
-- Java 17+
-- Gradle 7.5+ (or use the wrapper)
-- PostgreSQL database
-- GitHub Developer App (for OAuth)
-- OpenAI API key
-
-### Setup Instructions
+### 1. Клонування репозиторію
 
 ```bash
-# Clone the repository
-git clone https://github.com/SigmaDevsTeam/MainBackend.git
-cd MainBackend
-
-# Create a `.env` or configure `application.yml` with the following:
-# - GitHub OAuth credentials
-# - OpenAI API key
-# - PostgreSQL database config
-# - JWT secret
-
-# Build and run the app
-./gradlew bootRun
+git clone [https://github.com/your-username/your-backend-repo.git](https://github.com/your-username/your-backend-repo.git)
+cd your-backend-repo
