@@ -35,8 +35,23 @@
 
 ## 🚀 Інструкція із запуску (Local)
 
-### 1. Клонування репозиторію
-
 ```bash
-git clone [https://github.com/your-username/your-backend-repo.git](https://github.com/your-username/your-backend-repo.git)
+git clone [https://github.com/StannisShovkoplias/MastersProject.git](https://github.com/StannisShovkoplias/MastersProject-repo.git)
 cd your-backend-repo
+
+# OpenAI Configuration
+openai.api.key=sk-your-openai-api-key
+
+# GitHub OAuth
+spring.security.oauth2.client.registration.github.client-id=your-github-client-id
+spring.security.oauth2.client.registration.github.client-secret=your-github-client-secret
+
+# JWT Secret
+jwt.secret=your-very-secure-256-bit-secret
+
+docker-compose up -d db
+
+mvn clean install
+mvn spring-boot:run
+
+docker build -t ai-backend-app .
