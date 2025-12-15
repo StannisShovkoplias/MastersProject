@@ -37,7 +37,7 @@
 
 ```bash
 git clone [https://github.com/StannisShovkoplias/MastersProject.git](https://github.com/StannisShovkoplias/MastersProject-repo.git)
-cd your-backend-repo
+cd MastersProject
 
 # OpenAI Configuration
 openai.api.key=sk-your-openai-api-key
